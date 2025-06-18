@@ -56,3 +56,35 @@
 2025-06-18 18:48:54,360 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:48:54] "GET /api/status HTTP/1.1" 200 -
 2025-06-18 18:49:24,369 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:49:24] "GET /api/status HTTP/1.1" 200 -
 2025-06-18 18:49:54,445 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:49:54] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:27:27,412 - KufrBOT - INFO - Bot initialized for channels: ['kufric', 'kufrbot', 'marqetka']
+2025-06-18 19:27:27,432 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.128.26:5000
+2025-06-18 19:27:27,432 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-18 19:27:27,601 - root - ERROR - Bot error: Invalid or unauthorized Access Token passed.
+2025-06-18 19:27:28,183 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:27:28] "GET / HTTP/1.1" 200 -
+2025-06-18 19:27:28,503 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:27:28] "GET /static/style.css HTTP/1.1" 200 -
+2025-06-18 19:28:00,283 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:28:00] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:28:30,106 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:28:30] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:29:00,117 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:29:00] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:29:30,122 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:29:30] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:30:00,124 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:30:00] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:30:30,130 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:30:30] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:31:00,131 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:31:00] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:31:30,150 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:31:30] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:32:00,846 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:32:00] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:32:31,078 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:32:31] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:33:01,002 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:33:01] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:33:31,006 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:33:31] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:34:02,210 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:34:02] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:34:32,213 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:34:32] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:35:02,254 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:35:02] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:35:32,222 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:35:32] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:36:02,225 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:36:02] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:36:32,225 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:36:32] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:37:02,238 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:37:02] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:37:32,320 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:37:32] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:38:02,264 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:38:02] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:38:33,570 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:38:33] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 19:39:03,534 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 19:39:03] "GET /api/status HTTP/1.1" 200 -
