@@ -26,6 +26,7 @@ class KufrBOT(commands.Bot):
             initial_channels=channels
         )
         
+        self.prefix = Config.COMMAND_PREFIX  # Store prefix for later use
         self.last_request_time = 0
         self.logger = logging.getLogger('KufrBOT')
         self.start_time = datetime.now()
