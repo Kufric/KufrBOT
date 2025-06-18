@@ -36,6 +36,7 @@ class KufrBOT(commands.Bot):
     async def event_ready(self):
         """Called when the bot is ready"""
         self.logger.info(f'Bot logged in as: {self.nick}')
+        self.logger.info(f'Command prefix: {self.prefix}')
         
         # Announce bot is online
         for channel in self.connected_channels:
@@ -44,6 +45,11 @@ class KufrBOT(commands.Bot):
                 self.logger.info(f'Announced presence in channel: {channel.name}')
             except Exception as e:
                 self.logger.error(f'Failed to announce in channel {channel.name}: {e}')
+
+    async def event_command_error(self, context, error):
+        """Handle command errors"""
+        self.logger.error(f'Command error in {context.command}: {error}')
+        await context.send(f'Nastala chyba s příkazem. <@{context.author.name}>')
 
     async def event_message(self, message):
         """Handle incoming messages"""
@@ -57,10 +63,8 @@ class KufrBOT(commands.Bot):
 
         self.logger.debug(f'Message from {message.author.name}: {message.content}')
 
-        # Handle commands
-        if message.content.startswith(self.prefix):
-            self.logger.info(f'Processing command: {message.content}')
-            await self.handle_commands(message)
+        # Always process commands - this is crucial!
+        await self.handle_commands(message)
 
     async def announce_shutdown(self):
         """Announce bot shutdown"""
