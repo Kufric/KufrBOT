@@ -202,6 +202,23 @@ class KufrBOT(commands.Bot):
         await ctx.send(f'Bot běží {uptime_str} <@{ctx.author.name}>')
         self.logger.info(f'Uptime command executed by {ctx.author.name}: {uptime_str}')
 
+    @commands.command(name='help')
+    async def help(self, ctx):
+        """List all available commands"""
+        help_text = (
+            f"Dostupné příkazy <@{ctx.author.name}>: "
+            f">apex [player] [platform] - Apex Legends statistiky // "
+            f">cau - Pozdrav // "
+            f">stinky - Náhodné smradoch % // "
+            f">uh - Náhodná uh odpověď // "
+            f">plink - Náhodná plink odpověď // "
+            f">slots - Hrací automat // "
+            f">uptime - Doba běhu bota // "
+            f">help - Zobrazí tento seznam"
+        )
+        await ctx.send(help_text)
+        self.logger.info(f'Help command executed by {ctx.author.name}')
+
     async def close(self):
         """Graceful shutdown"""
         self.logger.info("Bot shutting down...")
