@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i data-feather="activity"></i>
+                    Bot Status
+                </h5>
+                <span id="status-badge" class="badge {% if status.running %}bg-success{% else %}bg-danger{% endif %}">
+                    {% if status.running %}Online{% else %}Offline{% endif %}
+                </span>
+            </div>
+            <div class="card-body" id="bot-status">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Status:</strong> 
+                            {% if status.running %}
+                                <span class="text-success">Running</span>
+                            {% else %}
+                                <span class="text-danger">Stopped</span>
+                            {% endif %}
+                        </p>
+                        {% if status.start_time %}
+                        <p><strong>Started:</strong> {{ status.start_time.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        {% if status.error %}
+                        <div class="alert alert-danger">
+                            <strong>Error:</strong> {{ status.error }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="mt-3">
+                    <button class="btn btn-success me-2" onclick="startBot()" {% if status.running %}disabled{% endif %}>
+                        <i data-feather="play"></i> Start Bot
+                    </button>
+                    <button class="btn btn-danger" onclick="stopBot()" {% if not status.running %}disabled{% endif %}>
+                        <i data-feather="square"></i> Stop Bot
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i data-feather="hash"></i>
+                    Available Commands
+                </h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><code>>apex [player] [platform]</code> - Apex Legends stats</li>
+                    <li><code>>cau</code> - Say hello</li>
+                    <li><code>>stinky</code> - Random stinky percentage</li>
+                    <li><code>>uh</code> - Random uh response</li>
+                    <li><code>>plink</code> - Random plink response</li>
+                    <li><code>>slots</code> - Slot machine game</li>
+                    <li><code>>uptime</code> - Bot uptime</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i data-feather="info"></i>
+                    Configuration
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Command Prefix:</strong> <code>></code></p>
+                        <p><strong>Channels:</strong> kufric, kufrbot, marqetka</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Rate Limit:</strong> 5 seconds between API calls</p>
+                        <p><strong>Auto-restart:</strong> Enabled</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function startBot() {
+    fetch('/api/start')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert('Failed to start bot: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to start bot');
+        });
+}
+
+function stopBot() {
+    fetch('/api/stop')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert('Failed to stop bot: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to stop bot');
+        });
+}
+</script>
+{% endblock %}

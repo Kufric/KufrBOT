@@ -1,0 +1,58 @@
+2025-06-18 18:39:40,049 - root - ERROR - Bot error: There is no current event loop in thread 'Thread-1 (run_bot)'.
+2025-06-18 18:39:40,057 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.128.81:5000
+2025-06-18 18:39:40,058 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-18 18:39:40,664 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:39:40] "GET / HTTP/1.1" 200 -
+2025-06-18 18:39:41,034 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:39:41] "GET /static/style.css HTTP/1.1" 200 -
+2025-06-18 18:40:01,827 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:40:01] "GET / HTTP/1.1" 200 -
+2025-06-18 18:40:01,835 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:40:01] "GET /static/style.css HTTP/1.1" 200 -
+2025-06-18 18:40:16,018 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:40:16] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:40:27,107 - root - ERROR - Bot error: There is no current event loop in thread 'Thread-8 (run_bot)'.
+2025-06-18 18:40:27,107 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:40:27] "GET /api/start HTTP/1.1" 200 -
+2025-06-18 18:40:27,225 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:40:27] "GET / HTTP/1.1" 200 -
+2025-06-18 18:40:27,357 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:40:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-06-18 18:40:41,221 - root - ERROR - Bot error: There is no current event loop in thread 'Thread-12 (run_bot)'.
+2025-06-18 18:40:41,222 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:40:41] "GET /api/start HTTP/1.1" 200 -
+2025-06-18 18:40:41,343 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:40:41] "GET / HTTP/1.1" 200 -
+2025-06-18 18:40:41,474 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:40:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-06-18 18:41:02,459 - root - ERROR - Bot error: There is no current event loop in thread 'Thread-16 (run_bot)'.
+2025-06-18 18:41:02,459 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:41:02] "GET /api/start HTTP/1.1" 200 -
+2025-06-18 18:41:02,578 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:41:02] "GET / HTTP/1.1" 200 -
+2025-06-18 18:41:02,704 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:41:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-06-18 18:41:34,878 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:41:34] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:42:04,884 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:42:04] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:42:35,134 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:42:35] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:43:05,027 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:43:05] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:43:35,040 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:43:35] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:43:51,942 - KufrBOT - INFO - Bot initialized for channels: ['kufric', 'kufrbot', 'marqetka']
+2025-06-18 18:43:51,953 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.128.81:5000
+2025-06-18 18:43:51,954 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-18 18:43:52,296 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:43:52] "GET / HTTP/1.1" 200 -
+2025-06-18 18:43:52,627 - twitchio.websocket - INFO - Successfully logged onto Twitch WS: kufrbot
+2025-06-18 18:43:52,709 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:43:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-06-18 18:43:52,744 - KufrBOT - INFO - Bot logged in as: kufrbot
+2025-06-18 18:43:52,745 - KufrBOT - INFO - Announced presence in channel: kufric
+2025-06-18 18:43:52,745 - KufrBOT - INFO - Announced presence in channel: kufrbot
+2025-06-18 18:43:52,745 - KufrBOT - INFO - Announced presence in channel: marqetka
+2025-06-18 18:43:52,746 - KufrBOT - WARNING - Received message with no author, skipping
+2025-06-18 18:43:52,746 - KufrBOT - WARNING - Received message with no author, skipping
+2025-06-18 18:43:52,746 - KufrBOT - WARNING - Received message with no author, skipping
+2025-06-18 18:44:05,945 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:44:05] "GET / HTTP/1.1" 200 -
+2025-06-18 18:44:05,970 - werkzeug - INFO - 127.0.0.1 - - [18/Jun/2025 18:44:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-06-18 18:44:24,293 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:44:24] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:44:54,360 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:44:54] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:45:24,309 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:45:24] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:45:54,310 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:45:54] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:46:24,318 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:46:24] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:46:54,326 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:46:54] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:47:24,344 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:47:24] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:47:54,338 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:47:54] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:48:24,348 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:48:24] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:48:54,360 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:48:54] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:49:24,369 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:49:24] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 18:49:54,445 - werkzeug - INFO - 172.31.128.81 - - [18/Jun/2025 18:49:54] "GET /api/status HTTP/1.1" 200 -

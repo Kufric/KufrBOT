@@ -1,0 +1,162 @@
+import random
+import requests
+import asyncio
+import signal
+from twitchio.ext import commands
+
+
+class KufrBOT(commands.Bot):
+
+    def __init__(self):
+        super().__init__(token='oauth:eug3lz1odurfma8kwcazcwyy8i4vj3', prefix='>',
+                         initial_channels=['kufric', 'kufrbot', "marqetka"])
+        self.last_request_time = 0  # Track the last request time
+
+        print(f'Logged in as {self.nick}')
+
+    async def event_ready(self):
+# Oznámí, že bot je online
+        for channel in self.connected_channels:
+            await channel.send(f'yo')
+
+#    print(f'Logged in as {self.nick}')
+    async def event_message(self, message):
+        print(f'Received message from {message.author}: {message.content}')
+
+        # Check if the message has a valid author
+        if message.author is None:
+            print("No author for the message, skipping.")
+            return  # Skip processing if there's no author
+
+        # Ignore messages sent by the bot itself
+        if message.author.name.lower() == self.nick.lower():
+            print("Message sent by the bot itself, skipping.")
+            return
+
+        # Define the prefix explicitly (since 'prefix' is not an attribute in this case)
+        prefix = '>'
+
+        # Check if the message is a command (starts with the command prefix)
+        if message.content.startswith(prefix):
+            print("Handling commands...")
+            await self.handle_commands(message)
+
+    async def announce_shutdown(self):
+        # Oznámí, že bot se vypíná
+        for channel in self.connected_channels:
+            await channel.send(f'leavuju, papa')
+
+    @staticmethod
+    async def fetch_player_stats(player_name, ctx, platform='PC'):
+        api_key = '26cc0642ea0983e9758c34d923d9c050'  # Replace with your actual API key
+        url = f"https://api.mozambiquehe.re/bridge?auth={api_key}&player={player_name}&platform={platform}"
+
+        response = requests.get(url)
+
+        # Log the request details to troubleshoot any issues
+        print(f"Request URL: {url}")
+        print(f"Response Status Code: {response.status_code}")
+        print(f"Response Content: {response.content}")
+
+        if response.status_code == 200:
+            data = response.json()
+
+            # Parse the player's career kills
+            career_kills_data = data.get('total', {}).get('career_kills', {})
+            career_kills_value = career_kills_data.get('value', 'N/A')  # Extract the value for career kills
+
+            # Get the player's rank and division
+            rank_name = data.get('global', {}).get('rank', {}).get('rankName', 'Unranked')
+            rank_div = data.get('global', {}).get('rank', {}).get('rankDiv', 'N/A')  # Get the division
+            rank = f"{rank_name} {rank_div}" if rank_div != 'N/A' else rank_name
+
+            # Get the player's currently selected legend
+            selected_legend = data.get('legends', {}).get('selected', {}).get('LegendName', 'Unknown')
+
+            # Get BR kills for the selected legend
+            selected_legend_kills_data = data.get('legends', {}).get('selected', {}).get('data', [])
+            selected_legend_br_kills = 'N/A'
+
+            # Loop through the selected legend's data to find BR Kills
+            for stat in selected_legend_kills_data:
+                if stat.get('name') == 'BR Kills':
+                    selected_legend_br_kills = stat.get('value', 'N/A')
+                    break
+
+            return (f"Apex statistiky uživatele {player_name}:  Rank: {rank} // "
+                    f"Selected Legend: {selected_legend} with {selected_legend_br_kills} Kills // Career Kills: {career_kills_value} <@{ctx.author.name}>")
+        elif response.status_code == 429:
+            return f"Limit překročen. Chvíli počkej a zkus to znovu. <@{ctx.author.name}>"
+        elif response.status_code == 404:
+            return f"Nelze načíst statistiky, zkus nejdříve najít svůj profil na apexlegendsstatus.com <@{ctx.author.name}>"
+        else:
+            return f"Nelze načíst statistiky pro {player_name}. Status: {response.status_code}. <@{ctx.author.name}>"
+
+    @commands.command(name='apex')
+    async def apex(self, ctx, player_name: str = None, platform: str = None):
+        if player_name is None or platform is None or player_name.lower() == "help":
+            await ctx.send(f'Použij >apex (username) (PC/PS4/X1/SWITCH) <@{ctx.author.name}>')
+            return
+
+        current_time = asyncio.get_event_loop().time()  # Get the current time
+
+        # Check if we need to wait before making the next request
+        if current_time - self.last_request_time < 5:  # 5 seconds between requests
+            await ctx.send(f'Chvíli počkej a zkus to znovu. <@{ctx.author.name}>')
+            return
+
+        player_stats = await KufrBOT.fetch_player_stats(player_name, ctx, platform)  # Pass platform as well
+        await ctx.send(player_stats)
+
+        # Update the time of the last request
+        self.last_request_time = current_time
+
+    @commands.command(name='cau')
+    async def cau(self, ctx):
+        await ctx.send(f'cau {ctx.author.name}')
+
+    @commands.command(name='stinky')
+    async def stinky(self, ctx):
+        stinky_percentage = random.randint(1, 100)
+        await ctx.send(f'{ctx.author.name} je z {stinky_percentage}% smradoch.')
+
+    @commands.command(name='uh')
+    async def uh(self, ctx):
+        uh_list = ['buh', 'wuh', 'puh', 'guh', 'muh', 'duh', 'cuh', 'ruh', 'vuh', 'euh', 'nuh', 'zuh', 'kuh', 'huh']
+        selected_word = random.choice(uh_list)
+        await ctx.send(f"{selected_word} <@{ctx.author.name}>")
+
+    @commands.command(name='plink')
+    async def plink(self, ctx):
+        plink_list = ["plink", "plonk", "bitrate", "wink", "plink-182", "LETHIMPLINK", "plinkge", "clean", "eww",
+                      "plunk", "plinkerton", "plinkplink", "Shocked", "mlem", "pleep", "plinktosis", "plenk", "star",
+                      "yum",
+                      "plinkStare", "crunch", "Buggin", "plinkChamp", "pl", "blepping", "SmolestPlink", "pwink",
+                      "framerate"]
+        selected_word = random.choice(plink_list)
+        await ctx.send(f"{selected_word} <@{ctx.author.name}>")
+
+    @commands.command(name='slots')
+    async def slots(self, ctx):
+        slots_list = [" maxwin ", "🍆", "🍇", "🍏", "🍒", "🍋", "🍍", "🍑", "🍓", "🍉", "🫐", "🍌", "🍎", "🍊"]
+        await ctx.send(
+            f"[{random.choice(slots_list)}{random.choice(slots_list)}{random.choice(slots_list)}] <@{ctx.author.name}>")
+
+
+if __name__ == "__main__":
+    kufrbot = KufrBOT()
+
+
+    # Funkce pro zpracování signálů
+    def signal_handler(_, __):
+        asyncio.run(kufrbot.announce_shutdown())  # Oznámí odchod
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(kufrbot.close())  # Zavře bota
+        print("Bot ukončen.")  # Informuje o ukončení
+
+
+    # Přidání signálů pro CTRL+C
+    signal.signal(signal.SIGINT, signal_handler)
+
+    # Spuštění bota
+    kufrbot.run()  # Spuštění bota
