@@ -268,3 +268,15 @@
 2025-06-18 21:05:01,905 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 21:05:01] "GET /api/status HTTP/1.1" 200 -
 2025-06-18 21:05:31,805 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 21:05:31] "GET /api/status HTTP/1.1" 200 -
 2025-06-18 21:06:01,809 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 21:06:01] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 21:25:56,576 - KufrBOT - INFO - Bot initialized for channels: ['kufric', 'kufrbot', 'marqetka']
+2025-06-18 21:25:56,609 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.128.26:5000
+2025-06-18 21:25:56,609 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-18 21:25:56,755 - root - ERROR - Bot error: Invalid or unauthorized Access Token passed.
+2025-06-18 21:25:56,969 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 21:25:56] "GET / HTTP/1.1" 200 -
+2025-06-18 21:25:57,440 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 21:25:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-06-18 21:26:28,796 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 21:26:28] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 21:26:58,557 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 21:26:58] "GET /api/status HTTP/1.1" 200 -
+2025-06-18 21:27:29,350 - werkzeug - INFO - 172.31.128.26 - - [18/Jun/2025 21:27:29] "GET /api/status HTTP/1.1" 200 -
